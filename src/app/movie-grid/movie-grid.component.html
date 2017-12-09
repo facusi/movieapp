@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="center page-title">...</h2>
+  <div class="row grid-view">
+    <div *ngFor="let movie of movies" (click)="showMovieDetails(movie)" class="column-20">
+      <div class="movie">
+        <img src="{{movie.imgPath}}" />
+        <h3>{{movie.name}}</h3><p>{{movie.duration}}</p>
+        <p>User Rating: {{movie.userRating}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-movie-detial [movie]="selectedMovie"></app-movie-detial>

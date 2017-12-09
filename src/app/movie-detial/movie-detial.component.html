@@ -1,0 +1,23 @@
+<div *ngIf="movie" class="container">
+  <div class="mv-detail-header">
+    <h2 class="movie-title">{{movie.name}}</h2>
+    <p [ngClass]="{red: isAdult, green: !isAdult}">
+      {{movie.mpaaRating.type}}
+    </p>
+  </div>
+  <div class="mv-detail-body">
+    <div class="row">
+      <div class="column-30">
+        <img class="movie-image" src="{{movie.imgPath}}" />
+      </div>
+      <div class="column-60">
+        <div class="movie-desc">
+          {{movie.description}}
+        </div>
+        <div class="red" *ngIf="isAdult">
+          *Identity Card would be required for verifying age.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
